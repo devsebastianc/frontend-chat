@@ -11,14 +11,18 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient( #0643eb  0%, #0643eb  130px, #b6eaff 130px,#b6eaff 100%);
+    background: linear-gradient( rgba(41,9,121,1)  0%, rgba(0,168,255,1)  130px, #b6eaff 130px,#b6eaff 100%);
+    /*background: rgb(0,27,36);
+    background: linear-gradient(310deg, rgba(0,27,36,0.711922268907563) 0%, rgba(41,9,121,1) 33%, rgba(0,168,255,1) 100%);*/
 }
 .container{
     display: flex;
     position: relative;
-    width: 1396px;
+    width: 100%;
+    height: 100vh;
+   /* width: 1396px;
     max-width: 100%;
-    height: calc(100vh - 40px);
+    height: calc(100vh - 40px);*/
     background: rgb(0, 0, 0);
     box-shadow: 0 1px 1px 0 rgba(0,0,0,0.06),0 2px 5px 0 rgba(0,0,0,0.06);
 }
@@ -58,7 +62,8 @@ body{
 }
 .search-container div input
 {
-    width: 100%;
+    margin: 10px;
+    width: 95%;
     border: none;
     outline: none;
     background: #fff;
@@ -75,14 +80,111 @@ body{
     top: 14px;
     font-size: 1.2em;
 }
-/*.search-container .Search{
-    height: 2.5rem;
-    margin-bottom: 0;
-    border: none !important;
-    border-radius: 1.375rem;
-    background-color: rgba(0,0,0,0) !important;
-    box-shadow: none !important;
-    padding: calc(0.4375rem
- - var(--border-width)) calc(2.625rem - var(--border-width)) calc(0.5rem - var(--border-width)) calc(2.75rem - var(--border-width));
+.chatlist{
+    position: relative;
+    height: calc(100% - 110px);
+    overflow-y: auto;
 }
-*/
+.chatlist .block{
+    display: flex;
+    position: relative;
+    width: 100%;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid rgba(29, 29, 29, 0.86);
+    cursor: pointer;
+    border-radius: 15px;
+}
+.chatlist .block:hover{
+    background: rgb(66, 66, 66);
+}
+.chatlist .block .details{
+    position: relative;
+    width: 100%;
+}
+.chatlist .block .details .head{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+.chatlist .block .details .head h4{
+    font-size: 1.1em;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+}
+.chatlist .block .details .head .time{
+    font-size: 0.75em;
+    color: grey;
+}
+.message-left{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.message-left p{
+    color: #aaa;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    font-size: 0.9em;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.message-left b{
+    background: royalblue;
+    color: #fff;
+    min-width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.75em;
+}
+.rigth-container .header{
+    display: flex;
+    position: relative;
+    width: 100%;
+    align-items: center;
+    padding: 15px;
+    background: rgb(30, 30, 32);
+    border-bottom: 1px solid rgba(29, 29, 29, 0.86);
+    cursor: pointer;
+}
+.imgText{
+    position: relative;
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+}
+.imgText h4{
+    font-weight: 400;
+    line-height: 1.2em;
+    margin-left: 10px;
+    color: #fff;
+}
+.imgText h4 span{
+    font-size: 0.8em;
+    color: rgb(163, 163, 163);
+}
+.chat-box{
+    position: relative;
+    width: calc(100% - 120px);
+    padding: 50px;
+    overflow-y: auto;
+}
+.message{
+    position: relative;
+    display: flex;
+    width: 100%;
+    margin: 5px 0;
+}
+.message p{
+    position: relative;
+    right: 0;
+    text-align: right;
+    max-width: 65%;
+    padding: 12px;
+    background: rgb(41, 41, 41);
+    border-radius: 10px;
+}
